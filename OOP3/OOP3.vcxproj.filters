@@ -24,6 +24,9 @@
     <ClInclude Include="targetver.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="Template.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
     <ClInclude Include="myClasses.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
@@ -32,10 +35,10 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
-    <ClCompile Include="OOP3.cpp">
+    <ClCompile Include="funkClasses.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
-    <ClCompile Include="funkClasses.cpp">
+    <ClCompile Include="OOP3.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
   </ItemGroup>

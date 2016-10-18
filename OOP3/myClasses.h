@@ -1,4 +1,6 @@
 #include <iostream>
+#include "Template.h"
+
 using namespace std;
 
 class Instector;
@@ -22,35 +24,36 @@ public:
 	void getCost();
 };
 
-class Product :  public Towar{
+class Product :  public Towar, public Podarok{
 	char *col;
+	char *name;
+	int size;
 public:
+	int getSize(){ return Product::size;};
+	void setSize(int f){size = f;};
+	void setName(char *c){name = c;};
+	char* getName(){ return name;};
+
+	void inform();
+
 	void setcolor(char *col);
 	void getcolor();
-	virtual void ToConcole() = 0;
-	virtual void setOsn(char *c) = 0;
+
 };
 
-class Tort : virtual public Product{
+class Tort :  public Product{
 	char *osnova;
 public:
-	 void ToConcole(){
-	 }
 	void setOsn(char *osnova);
 	void getOsn();
 };
 
-class Candys :  public Tort{
-		static int CandysKol;
-public:
-	Candys(){CandysKol++;};
-	~Candys(){CandysKol--;};
-	void getCandysKol(){
-		cout << endl << "Количество объектов конфет " << CandysKol << endl;
-	}
-	 void ToConcole(){
-		 cout << "\n Количество объектов конфет " << CandysKol << endl;
-	 };
+class Candy :  public Tort{
+
+};
+
+class Pirog : public Product{
+
 };
 
 
@@ -69,7 +72,6 @@ class Hours : public Towar{
 	class budilnik{
 	
 	public: 
-		void setLand(char *land){this->setLand(land);};
 		void setBud(bool b){this->IsBud = b;};
 		bool IsBud;
 	};
@@ -115,10 +117,3 @@ public:
 	}
 };
 
-class Printer{
-public:
-	void IAmPrinting(Candys *t){
-		t->ToConcole();
-		cout << "Type " << typeid(t).name() << endl;
-	}
-};
